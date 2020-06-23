@@ -1,0 +1,18 @@
+<h1 id="titulo">Usuario encontrado</h1>
+<section class="mt-4">
+    <div class="wrapper">
+        <div class="grid">
+            <% data.forEach(function(o) { %>
+            <article class="cards <%= o.color %>">
+                <p class="card-followers">
+                    <span class="card-followers-number"><%= o.username %></span>
+                    <span class="card-followers-title">User</span>
+                    <span class="card-followers-number"><%= o.password %></span>
+                    <span class="card-followers-title">Password</span>
+                </p>
+                <p class="card-today">
+            </article>
+            <% }); %>
+        </div>
+    </div>
+</section>

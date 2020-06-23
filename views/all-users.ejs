@@ -1,0 +1,31 @@
+
+</style>
+<h1 id="titulo">Usuarios registrados <span class="badge badge-pill badge-dark ml-2">
+    <%= users.length %>
+</span></h1>
+<section class="mt-4">
+        <div class="wrapper">
+            <div class="grid">
+                <% users.forEach(function(o) { %>
+                <article class="cards <%= o.color %>">
+                    <p class="card-title">
+                        <a href="/editar/<%= o._id %>"><i class="fas fa-edit"></i></a>
+                        Editar
+                    </p>
+                    <p class="card-followers">
+                        <span class="card-followers-number"><%= o.username %></span>
+                        <span class="card-followers-title">User</span>
+                    </p>
+                    <p class="card-today">
+                    <form action="/eliminar/<%= o._id%>?_method=DELETE" method="POST">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <div class="tarjeta">
+                            <button class="btn btn-danger eliminar" type="submit">Eliminar</button>
+                        </div>
+                    </form>
+                    </p>
+                </article>
+                <% }); %>
+            </div>
+        </div>
+    </section>
